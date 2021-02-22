@@ -62,6 +62,8 @@ try:
   print(f"hola que tal {lst_names['raul']}" )
 except Exception as e:
   logger.exception("An error ocurred: %r", e)
+```
+```
 An error ocurred: KeyError('raul')
 Traceback (most recent call last):
   File "main.py", line 18, in <module>
