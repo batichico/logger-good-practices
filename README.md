@@ -1,14 +1,14 @@
 # Buenas prácticas a la hora de crear logs:
 ```
-name1 = "samuel"
-# 1.- Caso
-logger.debug("%s se ha conectado", name1)
-# 2.- Caso
-logger.debug(f"{name1} se ha conectado")
-# 3.- Caso
-logger.debug("%s se ha conectado " %name1)
-# 4.- Caso
-logger.debug("{} se ha conectado".format(name1)) 
+user = "Michael"
+# 1.- Case
+logger.debug("%s has connected", user)
+# 2.- Case
+logger.debug(f"{user} has connected")
+# 3.- Case
+logger.debug("%s has connected" %user)
+# 4.- Case
+logger.debug("{} has connected".format(user))
 ```
 ## El primer caso a la hora de generar un log es el correcto, dado que solo se genera si realmente si pasa por la casuística del log. En el resto de casos en cambio se haría  el formateo de string pase o no la condición.
 
@@ -18,55 +18,57 @@ logger.debug("{} se ha conectado".format(name1))
 ```
 import logging
 logger = logging.getLogger('msd')
-lst_names = {
-  'samuel': {
-    "name": "samuel"
+lst_services = {
+  'free': {
+    "id": 1
   },
-  'marta': {
-    "name": "marta"
+  'vip': {
+    "id": 2
   },
-  'maria': {
-    "name": "maria"
+  'premium': {
+    "id": 3
   }
-} 
+}
 try:
-  print(f"hola que tal {lst_names['raul']}" )
+  service_type = 'all_payed'
+  print(f"{service_type} service id: {lst_services[service_type]['id']}" )
 except Exception as e:
   logger.exception("An error ocurred: %s", e)
 ``` 
 ```
-An error ocurred: 'raul'
+An error ocurred: 'all_payed'
 Traceback (most recent call last):
-  File "main.py", line 18, in <module>
-    print(f"hola que tal {lst_names['raul']}" )
-KeyError: 'raul'
+  File "main.py", line 16, in <module>
+    print(f"{service_type} service id: {lst_services[service_type]['id']}" )
+KeyError: 'all_payed'
 ``` 
 
 ## En el caso de %r , se usa para formatear el repr, que suele tener más información. En el caso de las excepciones, suele tener el nombre de la excepción.
 ```
 import logging
 logger = logging.getLogger('msd')
-lst_names = {
-  'samuel': {
-    "name": "samuel"
+lst_services = {
+  'free': {
+    "id": 1
   },
-  'marta': {
-    "name": "marta"
+  'vip': {
+    "id": 2
   },
-  'maria': {
-    "name": "maria"
+  'premium': {
+    "id": 3
   }
-} 
+}
 try:
-  print(f"hola que tal {lst_names['raul']}" )
+  service_type = 'all_payed'
+  print(f"{service_type} service id: {lst_services[service_type]['id']}" )
 except Exception as e:
   logger.exception("An error ocurred: %r", e)
 ```
 ```
-An error ocurred: KeyError('raul')
+An error ocurred: KeyError('all_payed')
 Traceback (most recent call last):
-  File "main.py", line 18, in <module>
-    print(f"hola que tal {lst_names['raul']}" )
-KeyError: 'raul'
+  File "main.py", line 16, in <module>
+    print(f"{service_type} service id: {lst_services[service_type]['id']}" )
+KeyError: 'all_payed'
 ``` 
 
