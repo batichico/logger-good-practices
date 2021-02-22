@@ -13,7 +13,8 @@ logger.debug("{} se ha conectado".format(name1))
 ## El primer caso a la hora de generar un log es el correcto, dado que solo se genera si realmente si pasa por la casuística del log. En el resto de casos en cambio se haría  el formateo de string pase o no la condición.
 
 # Además de eso en el caso de logger.exception :
-## 1.- Caso
+
+## En el caso de %s , formatea el string del valor
 ```
 import logging
 logger = logging.getLogger('msd')
@@ -41,7 +42,7 @@ Traceback (most recent call last):
 KeyError: 'raul'
 ``` 
 
-## En el caso de %s , formatea el string del valor
+## En el caso de %r , se usa para formatear el repr, que suele tener más información. En el caos de las excepciones, suele tener el nombre de la excepción.
 ```
 # 2.- Caso
 import logging
@@ -67,4 +68,4 @@ Traceback (most recent call last):
     print(f"hola que tal {lst_names['raul']}" )
 KeyError: 'raul'
 ``` 
-## En el caso de %r , se usa para formatear el repr, que suele tener más información. En el caos de las excepciones, suele tener el nombre de la excepción.
+
