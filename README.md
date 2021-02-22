@@ -42,7 +42,7 @@ Traceback (most recent call last):
 KeyError: 'raul'
 ``` 
 
-## En el caso de %r , se usa para formatear el repr, que suele tener más información. En el caos de las excepciones, suele tener el nombre de la excepción.
+## En el caso de %r , se usa para formatear el repr, que suele tener más información. En el caso de las excepciones, suele tener el nombre de la excepción.
 ```
 # 2.- Caso
 import logging
