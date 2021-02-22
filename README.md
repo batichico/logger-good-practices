@@ -44,7 +44,6 @@ KeyError: 'raul'
 
 ## En el caso de %r , se usa para formatear el repr, que suele tener más información. En el caso de las excepciones, suele tener el nombre de la excepción.
 ```
-# 2.- Caso
 import logging
 logger = logging.getLogger('msd')
 lst_names = {
