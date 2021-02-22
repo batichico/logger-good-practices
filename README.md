@@ -67,4 +67,4 @@ Traceback (most recent call last):
     print(f"hola que tal {lst_names['raul']}" )
 KeyError: 'raul'
 ``` 
-## En el caso de %r , se usa para formatear el repr, que suele tener más información. En el caos de las excepciones, suele tener el nombre de la excepción. (editado) (editado) 
+## En el caso de %r , se usa para formatear el repr, que suele tener más información. En el caos de las excepciones, suele tener el nombre de la excepción.
