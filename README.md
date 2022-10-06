@@ -10,7 +10,7 @@ logger.debug("%s has connected" %user)
 # 4.- Case
 logger.debug("{} has connected".format(user))
 ```
-## El primer caso a la hora de generar un log es el correcto, dado que solo se genera si realmente si pasa por la casuística del log. En el resto de casos en cambio se haría  el formateo de string pase o no la condición.
+## El primer caso a la hora de generar un log es el correcto, dado que solo se genera si realmente si pasa por la casuística del log. En el resto de casos en cambio se haría  el formateo de string, pase o no la condición.
 
 # Además de eso en el caso de logger.exception :
 
